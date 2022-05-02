@@ -1,0 +1,46 @@
+DEBUT(LANG='EN')
+
+
+mesh = LIRE_MAILLAGE(identifier='0:1',
+                     FORMAT='MED',
+                     UNITE=20)
+
+model = AFFE_MODELE(identifier='1:1',
+                    AFFE=_F(MODELISATION=('3D', ),
+                            PHENOMENE='MECANIQUE',
+                            TOUT='OUI'),
+                    MAILLAGE=mesh)
+
+Steel = DEFI_MATERIAU(identifier='2:1',
+                      ELAS=_F(E=210000000000.0,
+                              NU=0.3))
+
+fieldmat = AFFE_MATERIAU(identifier='3:1',
+                         AFFE=_F(MATER=(Steel, ),
+                                 TOUT='OUI'),
+                         MODELE=model)
+
+BC = AFFE_CHAR_MECA(identifier='4:1',
+                    FACE_IMPO=_F(DX=0.0,
+                                 DY=0.0,
+                                 DZ=0.0,
+                                 GROUP_MA=('Group_1', )),
+                    MODELE=model)
+
+load0 = AFFE_CHAR_MECA(identifier='5:1',
+                       FORCE_FACE=_F(FY=2000.0,
+                                     GROUP_MA=('LOAD_FACE', )),
+                       MODELE=model)
+
+reslin = MECA_STATIQUE(identifier='6:1',
+                       CHAM_MATER=fieldmat,
+                       EXCIT=(_F(CHARGE=BC),
+                              _F(CHARGE=load0)),
+                       MODELE=model)
+
+IMPR_RESU(identifier='7:1',
+          FORMAT='MED',
+          RESU=_F(RESULTAT=reslin),
+          UNITE=80)
+
+FIN()

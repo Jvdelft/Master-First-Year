@@ -1,0 +1,60 @@
+{
+  "history": {
+    "cases": [
+      {
+        "name": "RunCase_3",
+        "stages": [
+          1
+        ],
+        "baseFolder": "RunCase_3"
+      },
+      {
+        "name": "CurrentCase",
+        "stages": [
+          1
+        ]
+      }
+    ],
+    "stages": [
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Upper', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nSteel = DEFI_MATERIAU(ELAS=_F(E=210000.0, NU=0.3))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Steel, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=(_F(DX=0.0, GROUP_MA=('Left', )), _F(DY=0.0, GROUP_MA=('Bottom', ))), MODELE=model)\r\n\r\nload0 = AFFE_CHAR_MECA(MODELE=model, PRES_REP=_F(GROUP_MA=('Right', ), PRES=88.0))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=(_F(CHARGE=load), _F(CHARGE=load0)), MODELE=model)\r\n\r\nreslin = CALC_CHAMP(reuse=reslin, CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), CRITERES=('SIEQ_ELNO', ), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:3:3",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\Results_h0.med",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "2",
+            "mode": "Interactive",
+            "name": "RunCase_3_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "27/11/2020 12:25:32",
+            "endTime": "27/11/2020 12:25:44",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Plate_h0_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_3_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Plate_h0_Files\\RunCase_3\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-ven.-27-122531.962</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Plate_h0_Files\\RunCase_3\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Plate_h0_Files\\RunCase_3\\Result-Stage_1\\RunCase_3_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Plate_h0_Files\\RunCase_3\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_3_3.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Plate_h0_Files\\RunCase_3\\Result-Stage_1\\export</in_file>\n        <out_file>Results_h0.med</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 1,
+        "baseFolder": "Result-Stage_1"
+      }
+    ],
+    "aster": "stable",
+    "versionMajor": 14,
+    "versionMinor": 4
+  },
+  "minor": 10
+}

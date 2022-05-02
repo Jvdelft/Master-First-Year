@@ -1,0 +1,38 @@
+mesh = LIRE_MAILLAGE(FORMAT='MED',
+                     UNITE=20)
+
+mesh = MODI_MAILLAGE(reuse=mesh,
+                     MAILLAGE=mesh,
+                     ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))
+
+model = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ),
+                            PHENOMENE='MECANIQUE',
+                            TOUT='OUI'),
+                    MAILLAGE=mesh)
+
+Vana = DEFI_MATERIAU(ELAS=_F(E=190000000000.0,
+                             NU=0.29))
+
+fieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ),
+                                 TOUT='OUI'),
+                         MODELE=model)
+
+load = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'),
+                                  LIAISON='ENCASTRE'),
+                      MODELE=model,
+                      PRES_REP=_F(GROUP_MA=('Hand', ),
+                                  PRES=833333.3333))
+
+reslin = MECA_STATIQUE(CHAM_MATER=fieldmat,
+                       EXCIT=_F(CHARGE=load),
+                       MODELE=model)
+
+reslin = CALC_CHAMP(reuse=reslin,
+                    CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'),
+                    CRITERES=('SIEQ_ELNO', ),
+                    DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'),
+                    RESULTAT=reslin)
+
+IMPR_RESU(FORMAT='MED',
+          RESU=_F(RESULTAT=reslin),
+          UNITE=80)

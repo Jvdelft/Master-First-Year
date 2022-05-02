@@ -1,0 +1,268 @@
+{
+  "history": {
+    "cases": [
+      {
+        "name": "RunCase_12",
+        "stages": [
+          1
+        ],
+        "baseFolder": "RunCase_12"
+      },
+      {
+        "name": "RunCase_13",
+        "stages": [
+          2
+        ],
+        "baseFolder": "RunCase_13"
+      },
+      {
+        "name": "RunCase_14",
+        "stages": [
+          3
+        ],
+        "baseFolder": "RunCase_14"
+      },
+      {
+        "name": "RunCase_15",
+        "stages": [
+          4
+        ],
+        "baseFolder": "RunCase_15"
+      },
+      {
+        "name": "RunCase_16",
+        "stages": [
+          5
+        ],
+        "baseFolder": "RunCase_16"
+      },
+      {
+        "name": "RunCase_17",
+        "stages": [
+          6
+        ],
+        "baseFolder": "RunCase_17"
+      },
+      {
+        "name": "CurrentCase",
+        "stages": [
+          6
+        ]
+      }
+    ],
+    "stages": [
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nVana = DEFI_MATERIAU(ELAS=_F(E=190000.0, NU=0.29))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'), LIAISON='ENCASTRE'), MODELE=model, PRES_REP=_F(GROUP_MA=('Hand', ), PRES=833333.3333))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=_F(CHARGE=load), MODELE=model)\r\n\r\nunnamed = CALC_CHAMP(CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:4",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\ResWrench.rmed",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "5",
+            "mode": "Interactive",
+            "name": "RunCase_12_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "10/12/2020 11:13:40",
+            "endTime": "10/12/2020 11:13:46",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_12_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_12\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-jeu.-10-111339.391</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_12\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_12\\Result-Stage_1\\RunCase_12_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_12\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_2_4.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_12\\Result-Stage_1\\export</in_file>\n        <out_file>ResWrench.rmed</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 1
+      },
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nVana = DEFI_MATERIAU(ELAS=_F(E=190000.0, NU=0.29))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'), LIAISON='ENCASTRE'), MODELE=model, PRES_REP=_F(GROUP_MA=('Hand', ), PRES=833333.3333))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=_F(CHARGE=load), MODELE=model)\r\n\r\nunnamed = CALC_CHAMP(CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), CRITERES=('SIEQ_ELNO', ), DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:4",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\ResWrench.rmed",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "6",
+            "mode": "Interactive",
+            "name": "RunCase_13_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "10/12/2020 11:27:38",
+            "endTime": "10/12/2020 11:27:43",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_13_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_13\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-jeu.-10-112737.866</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_13\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_13\\Result-Stage_1\\RunCase_13_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_13\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_2_4.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_13\\Result-Stage_1\\export</in_file>\n        <out_file>ResWrench.rmed</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 2
+      },
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nVana = DEFI_MATERIAU(ELAS=_F(E=190000.0, NU=0.29))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'), LIAISON='ENCASTRE'), MODELE=model, PRES_REP=_F(GROUP_MA=('Hand', ), PRES=833333.3333))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=_F(CHARGE=load), MODELE=model)\r\n\r\nreslin = CALC_CHAMP(reuse=reslin, CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), CRITERES=('SIEQ_ELNO', ), DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:4",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\ResWrench.rmed",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "7",
+            "mode": "Interactive",
+            "name": "RunCase_14_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "10/12/2020 11:30:27",
+            "endTime": "10/12/2020 11:30:33",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_14_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_14\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-jeu.-10-113027.285</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_14\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_14\\Result-Stage_1\\RunCase_14_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_14\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_2_4.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_14\\Result-Stage_1\\export</in_file>\n        <out_file>ResWrench.rmed</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 3,
+        "baseFolder": "Result-Stage_1"
+      },
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nVana = DEFI_MATERIAU(ELAS=_F(E=190000.0, NU=0.29))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'), LIAISON='ENCASTRE'), MODELE=model, PRES_REP=_F(GROUP_MA=('Hand', ), PRES=833333.3333))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=_F(CHARGE=load), MODELE=model)\r\n\r\nreslin = CALC_CHAMP(reuse=reslin, CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), CRITERES=('SIEQ_ELNO', ), DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:4",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\ResWrench.rmed",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "8",
+            "mode": "Interactive",
+            "name": "RunCase_15_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "10/12/2020 11:39:13",
+            "endTime": "10/12/2020 11:40:05",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_15_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_15\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-jeu.-10-113913.372</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_15\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_15\\Result-Stage_1\\RunCase_15_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_15\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_2_4.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_15\\Result-Stage_1\\export</in_file>\n        <out_file>ResWrench.rmed</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 4,
+        "baseFolder": "Result-Stage_1"
+      },
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nVana = DEFI_MATERIAU(ELAS=_F(E=190000.0, NU=0.29))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'), LIAISON='ENCASTRE'), MODELE=model, PRES_REP=_F(GROUP_MA=('Hand', ), PRES=833333.3333))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=_F(CHARGE=load), MODELE=model)\r\n\r\nreslin = CALC_CHAMP(reuse=reslin, CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), CRITERES=('SIEQ_ELNO', ), DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:4",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\ResWrench.rmed",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "9",
+            "mode": "Interactive",
+            "name": "RunCase_16_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "10/12/2020 11:44:08",
+            "endTime": "10/12/2020 11:44:19",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_16_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_16\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-jeu.-10-114407.708</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_16\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_16\\Result-Stage_1\\RunCase_16_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_16\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_2_4.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_16\\Result-Stage_1\\export</in_file>\n        <out_file>ResWrench.rmed</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 5,
+        "baseFolder": "Result-Stage_1"
+      },
+      {
+        "name": "Stage_1",
+        "text": "mesh = LIRE_MAILLAGE(FORMAT='MED', UNITE=20)\r\n\r\nmesh = MODI_MAILLAGE(reuse=mesh, MAILLAGE=mesh, ORIE_PEAU_2D=_F(GROUP_MA=('Hand', )))\r\n\r\nmodel = AFFE_MODELE(AFFE=_F(MODELISATION=('C_PLAN', ), PHENOMENE='MECANIQUE', TOUT='OUI'), MAILLAGE=mesh)\r\n\r\nVana = DEFI_MATERIAU(ELAS=_F(E=190000.0, NU=0.29))\r\n\r\nfieldmat = AFFE_MATERIAU(AFFE=_F(MATER=(Vana, ), TOUT='OUI'), MODELE=model)\r\n\r\nload = AFFE_CHAR_MECA(DDL_IMPO=_F(GROUP_MA=('BC1', 'BC2'), LIAISON='ENCASTRE'), MODELE=model, PRES_REP=_F(GROUP_MA=('Hand', ), PRES=833333.3333))\r\n\r\nreslin = MECA_STATIQUE(CHAM_MATER=fieldmat, EXCIT=_F(CHARGE=load), MODELE=model)\r\n\r\nreslin = CALC_CHAMP(reuse=reslin, CONTRAINTE=('SIGM_ELGA', 'SIGM_ELNO'), CRITERES=('SIEQ_ELNO', ), DEFORMATION=('EPSI_ELGA', 'EPSI_ELNO'), RESULTAT=reslin)\r\n\r\nIMPR_RESU(FORMAT='MED', RESU=_F(RESULTAT=reslin), UNITE=80)",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:4",
+            "attr": 1
+          },
+          {
+            "handle": 80,
+            "filename": "C:\\Users\\Aurelien_Julien\\Desktop\\SalomeMeca\\WORK\\ResWrench.rmed",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "job": {
+            "jobid": "10",
+            "mode": "Interactive",
+            "name": "RunCase_17_Stage_1",
+            "server": "localhost",
+            "memory": 2048,
+            "time": "00:15:00",
+            "version": "stable",
+            "startTime": "10/12/2020 11:50:33",
+            "endTime": "10/12/2020 11:51:11",
+            "folder": "C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files",
+            "wckey": "P10WB:ASTER",
+            "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command\" name=\"RunCase_17_Stage_1\">\n    <user_part>\n      <job_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_17\\Result-Stage_1\\launcher_script.bat</job_file>\n      <work_directory>C:\\Users\\AURELI~1\\AppData\\Local\\Temp\\asterstudy_workdir_Aurelien_Julien\\Aurelien_Julien-AurelienJulien-jeu.-10-115033.481</work_directory>\n      <result_directory>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_17\\Result-Stage_1</result_directory>\n      <files>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_17\\Result-Stage_1\\RunCase_17_Stage_1.comm</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_17\\Result-Stage_1\\_ExportedFromSalomeObject_0_1_2_4.med</in_file>\n        <in_file>C:/Users/Aurelien_Julien/Desktop/SalomeMeca/WORK/Wrench3_Files\\RunCase_17\\Result-Stage_1\\export</in_file>\n        <out_file>ResWrench.rmed</out_file>\n        <out_file>message</out_file>\n        <out_file>base-stage1</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n"
+          },
+          "resstate": 16
+        },
+        "uid": 6,
+        "baseFolder": "Result-Stage_1"
+      }
+    ],
+    "aster": "stable",
+    "versionMajor": 14,
+    "versionMinor": 4
+  },
+  "minor": 10
+}

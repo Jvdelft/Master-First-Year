@@ -1,0 +1,1 @@
+as_run export > logs\stderr_command_salome.log
