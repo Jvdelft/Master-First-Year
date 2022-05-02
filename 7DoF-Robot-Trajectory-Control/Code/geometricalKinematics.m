@@ -83,4 +83,3 @@ Atot
     %theta2 = alpha-atan2(a(3),d(3));
     theta7 = theta2-theta4-pi;
     
-    %eval(Atot)
