@@ -7,7 +7,7 @@ The project was focused on computing inverse kinematics for a 7 DoF robot arm (F
 The motion had an objective to take a glass of liquid and transport it somewhere else to pour it. 
 To get a clear idea of the results, there is a video called 7DoFFrankaSimulation.mp4 showing the results. 
 The details of the computations are in the Final Report file.
-It is important to note that the robot had not enough strength to pike up the cylinder. It was asked by the professor to let it like that for the simulation.
+It is important to note that the robot had not enough strength to pick up the cylinder. It was asked by the professor to let it like that for the simulation.
 
 # Control Design Ball in Tube
 It is a project of designing a control law for an unknown system with disturbances. The first phase was an identification process. 
@@ -20,7 +20,7 @@ After that, the software SalomeMeca was used to make the practical finite elemen
 
 # IoT Enabled Exoskeleton
 My Master 1 project was focused on enabling an exoskeleton to be connected to the internet through cellular connectivity for remote and real-time monitoring and control.
-It was divided into several parts. The first was the coding and designing of the electronic circuit using an Arduino, sensors and cellular connectivity modules.
+It was divided into several parts. The first was the coding and designing of the electronic circuit using an Arduino, sensors and cellular connectivity modules (and interface with MATLAB were the exoskeleton was working).
 Another one was the construction of real-time servers on a Rasberry Pi for receiving and sending messages to the exoskeleton. 
 Finally, an interface was needed to send and read the messages on a computer remotely. The three parts were built and assembled. 
 To see the results, please have a look at the report and presentation (the latter has several videos of the results).
