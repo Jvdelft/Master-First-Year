@@ -1,0 +1,15 @@
+- Finding tomato
+- Reaching toamto
+- Grabbing tomato
+- Identify color of tomato
+- Move tomato in the sorted area
+
+
+Working structures / Morphological charts :
+
+-Means of object detection
+-Means of displacement
+-Means of grabbing the object
+-Means of color identification
+-Means of position control
+

@@ -1,0 +1,34 @@
+– What is the product’s utility? Who will use it? : Sort roundish fruits and vegetable by color, Food industry
+- What or who does it interfere with? : No one, autonomous system / Convoyer belt, fruits or vegetable (Food industry)
+- To which purpose this product has to be developed? : Sort tomato
+
+Needs :
+- Objective : Speed, Human safe, Not damage the tomato, move tomato, sort tomato, maintenability,...
+- Subjective : 0?
+
+Tomato sorter for normal size tomato (~10cm diameter)
+Electric 12V
+
+
+External principal functions : 
+- Autonomous system
+- Automatic tomato detection
+- Pick up tomato
+- Move tomato
+- Matureness detection
+- Low Cost
+- Reliability
+
+Constraints : 
+- Not damage the tomato
+- Cold environment
+- Adapted to convoyer belt speed
+- 220V input
+- Gripper
+
+Internal Functions :
+- Range sensor to detect change of height on the convoyer belt
+- Gripper ?
+- Matureness sensor to detect the maturity of the tomato
+
+
