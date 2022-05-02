@@ -1,0 +1,16 @@
+Mosquitto MQTT broker:
+https://iot4beginners.com/mosquitto-mqtt-broker-on-raspberry-pi/
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04
+https://pakstech.com/blog/raspberry-pi-mosquitto-getting-started/
+http://www.steves-internet-guide.com/install-mosquitto-linux/
+Configuration options:
+https://mosquitto.org/man/mosquitto-conf-5.html
+
+Node-RED interface:
+https://nodered.org/docs/getting-started/raspberrypi
+https://oneguyoneblog.com/2017/06/20/mosquitto-mqtt-node-red-raspberry-pi/
+
+VsFTPd server:
+https://raspberry-projects.com/pi/software_utilities/web-servers/vsftpd-ftp-server
+https://linuxize.com/post/how-to-setup-ftp-server-with-vsftpd-on-raspberry-pi/
+https://www.raspberrypi-spy.co.uk/2018/05/creating-ftp-server-with-raspberry-pi/
